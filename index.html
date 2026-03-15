@@ -2,234 +2,204 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Era Education | Online Maths & English Tuitions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="icon" type="image/jpeg" href="Logo.jpeg">
+<meta name="description" content="Era Education in Faridabad offers expert coaching in English, Maths, and Science for grades 6-10. Join for excellence under the guidance of Archana Gupta.">
+<meta name="keywords" content="Era Education, Coaching Faridabad, Archana Gupta, Class 6-10 Tuition, English Maths Science Coaching, Online Tuition Faridabad">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eraeducation.co.in/">
+<meta property="og:title" content="Era Education | Academic Excellence in Faridabad">
+<meta property="og:description" content="Expert coaching for English, Maths, and Science by Archana Gupta. Admissions open for 2026-27.">
+<meta property="og:image" content="https://eraeducation.co.in/Logo.jpeg">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://eraeducation.co.in/">
+<meta property="twitter:title" content="Era Education | Learn. Grow. Lead.">
+<meta property="twitter:description" content="Top-tier tuition for grades 6-10 in Faridabad. Focus on conceptual clarity and success.">
+<meta property="twitter:image" content="hhttps://eraeducation.co.in/Logo.jpeg">    
+<title>Era Education | Learn. Grow. Lead.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: { extend: { colors: { eraBlue: '#103558', eraGold: '#C58F28', eraOrange: '#E98B24' }}}
+        }
+    </script>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --whatsapp: #25d366;
-            --light: #f4f7f6;
-            --white: #ffffff;
-            --text: #333;
-            --quote: #7f8c8d;
+        .sideways-text { writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
+        
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(197, 143, 40, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(197, 143, 40, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(197, 143, 40, 0); }
         }
+        .animate-demo { animation: pulse-gold 2s infinite; }
 
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
-
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), 
-                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-        }
-
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
-
-        .container { width: 85%; max-width: 1100px; margin: auto; padding: 60px 0; }
-
-        .about-section, .fees-section { background: var(--white); }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .card, .testimonial-card, .fee-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: 0.3s ease;
-        }
-
-        .card:hover { transform: translateY(-10px); }
-
-        .fee-card { border-top: 5px solid var(--accent); }
-        .fee-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.5rem; }
-        .fee-price { font-size: 1.4rem; font-weight: bold; color: var(--accent); margin: 20px 0; }
-
-        .testimonial-card { text-align: left; border-top: 4px solid var(--accent); }
-        .testimonial-text { font-style: italic; color: var(--quote); margin-bottom: 15px; font-size: 1.1rem; }
-        .testimonial-author { font-weight: bold; color: var(--primary); display: block; }
-
-        .contact-section { background: var(--primary); color: white; padding: 80px 0; text-align: center; }
-        .contact-info p { font-size: 1.2rem; margin: 15px 0; }
-        .contact-info i { margin-right: 10px; color: var(--accent); }
-
-        .btn {
-            background: var(--accent);
-            color: white;
-            padding: 16px 35px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-whatsapp { background: var(--whatsapp); }
-        .btn-whatsapp:hover { background: #1eb954; }
-
-        .whatsapp-float {
-            position: fixed; width: 65px; height: 65px; bottom: 40px; right: 40px;
-            background-color: var(--whatsapp); color: #FFF; border-radius: 50px;
-            text-align: center; font-size: 35px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
-            z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none;
-            transition: 0.3s;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
-
-        footer { text-align: center; padding: 40px; background: #1a252f; color: #bdc3c7; font-size: 0.9rem; }
-
-        @media (max-width: 768px) { 
-            .container { width: 90%; padding: 40px 0; }
-            .hero h1 { font-size: 1.8rem; }
-            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
-        }
+        .course-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .course-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(16, 53, 88, 0.1); }
+        
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
+<body class="bg-white font-sans overflow-x-hidden">
 
-<a href="https://wa.me/917065655444?text=Hi%20Archana,%20I%20am%20interested%20in%20online%20tuitions%20for%20my%20child." class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        z-index: 150;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+    }
+</style>
+
+<nav class="fixed left-0 top-0 h-screen z-[100] hidden md:flex flex-col items-center bg-eraBlue text-white shadow-2xl py-8 px-3 border-r-4 border-eraGold">
+    <div class="flex flex-col gap-10 mt-24 flex-grow">
+        <a href="index.html" class="sideways-text font-bold uppercase tracking-widest text-eraGold hover:text-white transition-all">Home</a>
+        <a href="about.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">About</a>
+        <a href="courses.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Courses</a>
+        <a href="payment.html" class="sideways-text font-black uppercase tracking-widest text-eraOrange border-y border-eraGold/20 py-6 hover:scale-110 hover:text-white transition-all">Pay Fees</a>
+        <a href="team.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Team</a>
+        <a href="testimonial.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Reviews</a>
+    </div>
+</nav>
+
+<a href="https://wa.me/917065655444?text=Hello%20Era%20Education%2C%20I%20am%20interested%20in%20joining%20your%20online%20classes.%20Please%20provide%20more%20details." 
+   class="whatsapp-float animate-bounce" 
+   target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/>
+    </svg>
 </a>
 
-<header>
-    <div class="logo">Era Education</div>
+    <div class="md:hidden fixed top-0 w-full bg-eraBlue p-4 z-[110] flex justify-between items-center shadow-lg">
+        <div class="flex items-center gap-2">
+            <img src="Logo.jpeg" class="h-8 rounded shadow-sm">
+            <span class="text-white font-black uppercase tracking-tighter text-sm">Era Education</span>
+        </div>
+        <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+        </button>
+    </div>
+
+    <div class="md:ml-20 min-h-screen flex flex-col">
+        
+        <header class="hidden md:flex w-full bg-white border-b border-gray-100 py-6 px-12 items-center justify-between sticky top-0 z-[90] shadow-sm">
+    <a href="index.html" class="flex items-center gap-4 hover:opacity-80 transition-opacity">
+        <img src="Logo.jpeg" class="h-14 w-14 rounded-xl shadow-md border-2 border-eraGold/20">
+        <div>
+            <h1 class="text-2xl font-black text-eraBlue uppercase tracking-tighter leading-none">Era Education</h1>
+            <p class="text-[10px] font-bold text-eraGold uppercase tracking-[0.3em] mt-1">Learn. Grow. Lead.</p>
+        </div>
+    </a>
+    <a href="payment.html" class="animate-demo bg-eraOrange text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest shadow-lg hover:bg-eraBlue transition-all">
+        Online Fee Payment
+    </a>
 </header>
 
-<section class="hero">
-    <h1>Quality Online Tuitions for Grades 6-10</h1>
-    <p>Mastering Maths & English across CBSE, ICSE, and All State Boards</p>
-    <a href="https://wa.me/917065655444" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Book a Demo Class</a>
-</section>
+        <section class="flex-grow flex items-center px-8 md:px-20 py-24 bg-gradient-to-br from-white to-slate-50">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-block bg-eraGold/5 border border-eraGold/20 text-eraGold px-4 py-1.5 rounded-full font-black text-[10px] uppercase tracking-[0.2em]">
+                        Admissions Open 2026-27
+                    </div>
+                    <h2 class="text-6xl md:text-8xl font-black text-eraBlue leading-[0.9] tracking-tighter">
+                        Learn. <br><span class="text-eraGold">Grow.</span> <br>Lead.
+                    </h2>
+                    <p class="text-lg text-gray-500 max-w-md font-medium leading-relaxed">
+                        Excellence in coaching for English, Maths, and Science under the expert guidance of <span class="text-eraBlue font-bold">Archana Gupta</span>.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="courses.html" class="bg-eraBlue text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:bg-eraOrange transition-all flex items-center gap-2">
+                            Explore Courses
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-eraGold/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 p-4 bg-white shadow-2xl rounded-[2.5rem] border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" 
+                             class="rounded-[2rem] grayscale hover:grayscale-0 transition duration-700 w-full object-cover h-[500px]" 
+                             alt="Era Education">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="about-section">
-    <div class="container">
-        <h2 style="color: var(--primary); text-align: center; font-size: 2.2rem;">Expert Guidance by Archana Gupta</h2>
-        <p style="text-align: center; max-width: 800px; margin: 20px auto; font-size: 1.1rem;">We bridge the gap between classroom learning and conceptual mastery. At Era Education, we ensure every student receives personalized attention in a comfortable online setting.</p>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-calculator" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
-                <h3>Interactive Maths</h3>
-                <p>Simplifying complex logic and formulas into easy-to-remember concepts for all board levels.</p>
+        <section class="px-8 md:px-20 py-24 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h3 class="text-xs font-black text-eraGold uppercase tracking-[0.4em] mb-3">Our Expertise</h3>
+                    <h2 class="text-4xl md:text-5xl font-black text-eraBlue uppercase tracking-tighter">Focus Subjects</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="course-card bg-slate-50 p-10 rounded-[2.5rem] border-b-8 border-eraBlue">
+                        <h4 class="text-xl font-black text-eraBlue uppercase mb-4 text-center">English</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed text-center">Grammar, Literature, and spoken English for all grades.</p>
+                    </div>
+                    <div class="course-card bg-slate-50 p-10 rounded-[2.5rem] border-b-8 border-eraGold">
+                        <h4 class="text-xl font-black text-eraBlue uppercase mb-4 text-center">Mathematics</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed text-center">Conceptual clarity and problem solving for academic success.</p>
+                    </div>
+                    <div class="course-card bg-slate-50 p-10 rounded-[2.5rem] border-b-8 border-eraOrange">
+                        <h4 class="text-xl font-black text-eraBlue uppercase mb-4 text-center">Science</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed text-center">In-depth coverage of Physics, Chemistry, and Biology.</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <i class="fas fa-pen-nib" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
-                <h3>English Mastery</h3>
-                <p>Focusing on grammar foundations, literature analysis, and effective communication skills.</p>
+        </section>
+
+        <footer class="bg-slate-50 py-16 border-t mt-auto">
+            <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-12">
+                <div class="col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Logo.jpeg" class="h-10 w-10 rounded">
+                        <span class="text-xl font-black text-eraBlue uppercase tracking-tighter">Era Education</span>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white border border-gray-200 p-4 rounded-2xl shadow-sm w-fit">
+                        <div class="text-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Fee Portal</p>
+                            <p class="text-xs font-black text-eraBlue">UPI Secured</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black text-eraBlue uppercase tracking-widest mb-6">Contact</h4>
+                    <p class="text-sm font-bold text-gray-600">+91 7065655444<br>archana@eraeducation.co.in</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mb-4">
+                        &copy; 2026 Era Education. All Rights Reserved.
+                    </p>
+                    <p class="text-[9px] text-gray-400 uppercase leading-relaxed">
+                        Disclaimer: All curriculum and logos are protected by copyright law. Mentorship provided by Archana Gupta.
+                    </p>
+                </div>
             </div>
-            <div class="card">
-                <i class="fas fa-laptop-house" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
-                <h3>Small Batches</h3>
-                <p>Ensuring individualized focus and regular doubt-clearing sessions for every student.</p>
-            </div>
-        </div>
+        </footer>
     </div>
-</section>
 
-<section class="fees-section">
-    <div class="container">
-        <h2 style="text-align: center; color: var(--primary); font-size: 2.2rem;">Our Programs</h2>
-        <div class="grid">
-            <div class="fee-card">
-                <h3>Grades 6 - 8</h3>
-                <p>Foundation & Confidence Building</p>
-                <div class="fee-price">Maths & English</div>
-                <ul style="text-align: left; padding-left: 20px; margin-bottom: 20px;">
-                    <li>Conceptual Foundation</li>
-                    <li>Weekly Practice Sheets</li>
-                    <li>Homework Assistance</li>
-                </ul>
-                <a href="https://wa.me/917065655444?text=I%20would%20like%20to%20know%20more%20about%20classes%20for%20Grades%206-8." class="btn">Enquire Now</a>
-            </div>
-            <div class="fee-card">
-                <h3>Grades 9 - 10</h3>
-                <p>Board Exam Preparation</p>
-                <div class="fee-price">Maths & English</div>
-                <ul style="text-align: left; padding-left: 20px; margin-bottom: 20px;">
-                    <li>Intensive Board Prep</li>
-                    <li>Sample Paper Solving</li>
-                    <li>Time Management Strategies</li>
-                </ul>
-                <a href="https://wa.me/917065655444?text=I%20would%20like%20to%20know%20more%20about%20Board%20prep%20for%20Grades%209-10." class="btn">Enquire Now</a>
-            </div>
-        </div>
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-eraBlue z-[200] flex flex-col items-center justify-center gap-8 text-white text-2xl font-bold uppercase tracking-widest">
+        <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-8 right-8 text-eraGold text-5xl">&times;</button>
+        <a href="index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+        <a href="courses.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Courses</a>
+        <a href="payment.html" class="text-eraOrange" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Pay Fees</a>
     </div>
-</section>
-
-<section class="testimonials" style="padding-bottom: 60px;">
-    <div class="container">
-        <h2 style="text-align: center; color: var(--primary); font-size: 2.2rem; margin-bottom: 40px;">What Parents Say</h2>
-        <div class="grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Archana Gupta's methodology is excellent. My child has significantly improved in Maths and actually looks forward to the classes!"</p>
-                <span class="testimonial-author">- Parent, Faridabad</span>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The English sessions are very engaging. I've seen a huge difference in my daughter's grammar and writing ability."</p>
-                <span class="testimonial-author">- Parent, Delhi NCR</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="contact-section" id="contact">
-    <div class="container">
-        <h2 style="font-size: 2.5rem;">Connect With Us</h2>
-        <p>Ready to boost your child's academic performance?</p>
-        <div class="contact-info" style="margin: 40px 0;">
-            <p><i class="fas fa-user"></i> Archana Gupta</p>
-            <p><i class="fas fa-phone-alt"></i> +91 7065655444</p>
-            <p><i class="fas fa-envelope"></i> archana@eraeducation.co.in</p>
-        </div>
-        <div>
-            <a href="tel:+917065655444" class="btn" style="background: #e67e22;"><i class="fas fa-phone"></i> Call Now</a>
-            <a href="https://wa.me/917065655444" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-    </div>
-</section>
-
-<footer>
-    &copy; 2026 Era Education. All Rights Reserved. <br>
-    Excellence in Online Education for Secondary Students.
-</footer>
 
 </body>
 </html>

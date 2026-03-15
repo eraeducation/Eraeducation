@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Era Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: { extend: { colors: { eraBlue: '#103558', eraGold: '#C58F28', eraOrange: '#E98B24' }}}
+        }
+    </script>
+    <style>
+        .sideways-text { writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
+        
+        /* Watermark Styling */
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            opacity: 0.10; /* Very subtle */
+            z-index: -1;
+            width: 600px;
+            pointer-events: none;
+        }
+
+        .feature-card:hover { border-color: #C58F28; background: white; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans overflow-x-hidden">
+
+    <img src="Logo.jpeg" class="watermark" alt="Era Education Watermark">
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
+</style>
+
+<nav class="fixed left-0 top-0 h-screen z-[100] hidden md:flex flex-col items-center bg-eraBlue text-white shadow-2xl py-8 px-3 border-r-4 border-eraGold">
+    <div class="flex flex-col gap-10 mt-24 flex-grow">
+        <a href="index.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Home</a>
+        <a href="about.html" class="sideways-text font-bold uppercase tracking-widest text-eraGold hover:text-white transition-all">About</a>
+        <a href="courses.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Courses</a>
+        <a href="payment.html" class="sideways-text font-black uppercase tracking-widest text-eraOrange border-y border-eraGold/20 py-6 hover:scale-110 hover:text-white transition-all">Pay Fees</a>
+        <a href="team.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Team</a>
+        <a href="testimonial.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Reviews</a>
+    </div>
+</nav>
+
+<a href="https://wa.me/917065655444?text=Hello%20Era%20Education%2C%20I%20read%20about%20your%20teaching%20philosophy%20and%20would%20like%20to%20inquire%20about%20admissions." 
+   class="whatsapp-float animate-bounce" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/>
+    </svg>
+</a>
+
+    <div class="md:ml-20 min-h-screen">
+        
+        <header class="w-full bg-white/80 backdrop-blur-md border-b border-gray-100 py-6 px-8 md:px-12 flex items-center justify-between sticky top-0 z-[90]">
+            <div class="flex items-center gap-4">
+                <img src="Logo.jpeg" class="h-12 w-12 rounded-lg shadow-sm">
+                <div>
+                    <h1 class="text-xl font-black text-eraBlue uppercase tracking-tighter leading-none">Era Education</h1>
+                    <p class="text-[9px] font-bold text-eraGold uppercase tracking-[0.3em] mt-1">Our Story</p>
+                </div>
+            </div>
+            <a href="index.html" class="text-xs font-black text-eraBlue uppercase tracking-widest hover:text-eraGold transition">← Back Home</a>
+        </header>
+
+        <section class="py-20 px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-eraGold font-black uppercase tracking-[0.5em] text-[10px]">Since 2024</span>
+                <h2 class="text-5xl md:text-7xl font-black text-eraBlue uppercase tracking-tighter mt-4 mb-8">Redefining <br>Academic Success</h2>
+                <p class="text-lg text-gray-600 leading-relaxed font-medium">
+                    Era Education was founded with a singular vision: to bridge the gap between school learning and conceptual mastery. Under the visionary leadership of <span class="text-eraBlue font-bold underline decoration-eraGold decoration-2">Archana Gupta</span>, we have evolved into a premier learning hub for students seeking excellence in English, Mathematics, and Science.
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-8 py-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="feature-card p-8 rounded-[2rem] border border-gray-200 transition-all">
+                <h4 class="text-eraGold font-black text-3xl mb-2">01.</h4>
+                <h5 class="text-eraBlue font-black uppercase mb-3">Expert Mentorship</h5>
+                <p class="text-sm text-gray-500">Personal guidance by Archana Gupta ensuring every student finds their unique path to success.</p>
+            </div>
+            <div class="feature-card p-8 rounded-[2rem] border border-gray-200 transition-all">
+                <h4 class="text-eraGold font-black text-3xl mb-2">02.</h4>
+                <h5 class="text-eraBlue font-black uppercase mb-3">Conceptual Focus</h5>
+                <p class="text-sm text-gray-500">We move beyond rote memorization to instill a deep, logical understanding of core subjects.</p>
+            </div>
+            <div class="feature-card p-8 rounded-[2rem] border border-gray-200 transition-all">
+                <h4 class="text-eraGold font-black text-3xl mb-2">03.</h4>
+                <h5 class="text-eraBlue font-black uppercase mb-3">Small Batches</h5>
+                <p class="text-sm text-gray-500">Individual attention guaranteed through limited batch sizes for maximum interaction.</p>
+            </div>
+            <div class="feature-card p-8 rounded-[2rem] border border-gray-200 transition-all">
+                <h4 class="text-eraGold font-black text-3xl mb-2">04.</h4>
+                <h5 class="text-eraBlue font-black uppercase mb-3">Result Driven</h5>
+                <p class="text-sm text-gray-500">A proven track record of helping students excel in school boards and competitive foundations.</p>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-8 py-24">
+            <div class="bg-eraBlue rounded-[3.5rem] p-10 md:p-20 text-white flex flex-col md:flex-row items-center gap-12 relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-eraGold opacity-10 rounded-full -mr-20 -mt-20"></div>
+                
+                <div class="w-full md:w-2/3">
+                   <div class="w-full md:w-2/3">
+    <div class="aspect-square overflow-hidden rounded-[3rem] border border-white/20 shadow-2xl">
+        <img 
+            src="photo-ArchanaGupta.png?q=10&w=800&auto=format&fit=crop" 
+            alt="Archana Gupta - Lead Educator" 
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+    </div>
+</div>
+                </div>
+                
+                <div class="w-full md:w-2/3 space-y-6">
+                    <h3 class="text-4xl font-black uppercase tracking-tighter">The Success Blueprint</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed">
+                        "Success isn't just about high scores; it's about the confidence a student gains when they truly understand a concept. At Era Education, our curriculum is designed to spark curiosity and build the mental discipline required for leadership."
+                    </p>
+                    <div class="pt-6">
+                        <p class="text-eraGold font-black uppercase tracking-widest">Archana Gupta</p>
+                        <p class="text-xs text-blue-300 font-bold uppercase tracking-widest mt-1">Founder & Lead Educator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-white py-16 border-t mt-auto">
+            <div class="max-w-7xl mx-auto px-8 text-center">
+                <img src="Logo.jpeg" class="h-12 w-12 mx-auto mb-6 rounded shadow-sm">
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em]">&copy; 2024 Era Education</p>
+                <p class="text-[9px] text-gray-400 uppercase mt-4 max-w-lg mx-auto leading-relaxed">
+                    Designed for academic excellence. All materials and logos are the intellectual property of Era Education.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

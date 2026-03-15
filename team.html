@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Era Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: { extend: { colors: { eraBlue: '#103558', eraGold: '#C58F28', eraOrange: '#E98B24' }}}
+        }
+    </script>
+    <style>
+        .sideways-text { writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
+        .faculty-card { transition: all 0.4s ease; }
+        .faculty-card:hover { transform: translateY(-5px); }
+        .faculty-img { object-fit: cover; border: 4px solid #F1F5F9; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans overflow-x-hidden">
+
+    <style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
+</style>
+
+<nav class="fixed left-0 top-0 h-screen z-[100] hidden md:flex flex-col items-center bg-eraBlue text-white shadow-2xl py-8 px-3 border-r-4 border-eraGold">
+    <div class="flex flex-col gap-10 mt-24 flex-grow">
+        <a href="index.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Home</a>
+        <a href="about.html" class="sideways-text font-bold uppercase tracking-widest text-eraGold hover:text-white transition-all">About</a>
+        <a href="courses.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Courses</a>
+        <a href="payment.html" class="sideways-text font-black uppercase tracking-widest text-eraOrange border-y border-eraGold/20 py-6 hover:scale-110 hover:text-white transition-all">Pay Fees</a>
+        <a href="team.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Team</a>
+        <a href="testimonial.html" class="sideways-text font-bold uppercase tracking-widest hover:text-eraGold transition-all">Reviews</a>
+    </div>
+</nav>
+
+<a href="https://wa.me/917065655444?text=Hello%20Era%20Education%2C%20I%20read%20about%20your%20teaching%20philosophy%20and%20would%20like%20to%20inquire%20about%20admissions." 
+   class="whatsapp-float animate-bounce" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/>
+    </svg>
+</a>
+
+    <div class="md:ml-20 min-h-screen">
+        <header class="w-full bg-white border-b border-gray-100 py-6 px-8 md:px-12 flex items-center justify-between sticky top-0 z-[90] shadow-sm">
+            <div class="flex items-center gap-4">
+                <img src="Logo.jpeg" class="h-12 w-12 rounded-lg shadow-md border border-eraGold/20">
+                <div>
+                    <h1 class="text-xl font-black text-eraBlue uppercase tracking-tighter leading-none">Era Education</h1>
+                    <p class="text-[9px] font-bold text-eraGold uppercase tracking-[0.3em] mt-1">Our Educators</p>
+                </div>
+            </div>
+            <a href="index.html" class="text-xs font-black text-eraBlue uppercase tracking-widest hover:text-eraGold transition">← Back Home</a>
+        </header>
+
+        <section class="py-16 px-8 text-center bg-white">
+            <h2 class="text-4xl md:text-6xl font-black text-eraBlue uppercase tracking-tighter mb-4">Meet Our Experts</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto font-medium">Led by Archana Gupta, our faculty is dedicated to transforming students into future leaders through subject mastery.</p>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-8 py-12">
+            <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border-l-8 border-eraGold grid md:grid-cols-3 gap-8 items-center">
+                <div class="col-span-1">
+                    <div class="aspect-square rounded-[2rem] overflow-hidden shadow-lg border-2 border-eraGold/20">
+                        <img src="photo-ArchanaGupta.png?q=80&w=800&auto=format&fit=crop" 
+                             alt="Archana Gupta" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="col-span-2 space-y-4">
+                    <span class="bg-eraBlue text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Founder & Principal Mentor</span>
+                    <h3 class="text-3xl font-black text-eraBlue uppercase">Archana Gupta</h3>
+                    <p class="text-gray-600 leading-relaxed italic">"At Era Education, we don't just teach subjects; we build character and analytical thinking skills that last a lifetime."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-8 pb-24">
+            <div class="grid md:grid-cols-3 gap-10 mt-12">
+                
+                <div class="faculty-card bg-white p-8 rounded-[2.5rem] shadow-sm text-center">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-slate-50 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1544168190-79c17527004f?q=80&w=400&auto=format&fit=crop" 
+                             alt="Maths Faculty" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-black text-eraBlue uppercase">Maths Faculty</h4>
+                    <p class="text-eraGold font-bold text-xs uppercase tracking-widest mb-4">Department of Numeracy</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">Specializing in Vedic Maths and Board Exam preparation.</p>
+                </div>
+
+                <div class="faculty-card bg-white p-8 rounded-[2.5rem] shadow-sm text-center">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-slate-50 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=400&auto=format&fit=crop" 
+                             alt="English Faculty" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-black text-eraBlue uppercase">English Faculty</h4>
+                    <p class="text-eraGold font-bold text-xs uppercase tracking-widest mb-4">Department of Languages</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">Experts in Literature, Creative Writing, and Spoken English.</p>
+                </div>
+
+                <div class="faculty-card bg-white p-8 rounded-[2.5rem] shadow-sm text-center">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-slate-50 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" 
+                             alt="Science Faculty" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-black text-eraBlue uppercase">Science Faculty</h4>
+                    <p class="text-eraGold font-bold text-xs uppercase tracking-widest mb-4">Department of Enquiry</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">Covering Physics, Chemistry, and Biology with interactive methods.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="bg-white py-12 border-t text-center">
+            <img src="Logo.jpeg" class="h-10 w-10 mx-auto mb-4 rounded shadow">
+            <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] mb-2">© 2024 Era Education</p>
+            <p class="text-[9px] text-gray-400 uppercase">Mental Growth • Academic Excellence • Leadership</p>
+        </footer>
+    </div>
+</body>
+</html>
