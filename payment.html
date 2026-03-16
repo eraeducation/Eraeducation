@@ -6,6 +6,12 @@
     <title>Secure Payment | Era Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("YOUR_PUBLIC_KEY");
+       })();
+    </script>
     <script>
         tailwind.config = {
           theme: { extend: { colors: { eraBlue: '#103558', eraGold: '#C58F28', eraOrange: '#E98B24' }}}
@@ -21,9 +27,6 @@
         #qrcode img { margin: 0 auto; border: 8px solid white; border-radius: 12px; }
         .hero-gradient { background: linear-gradient(135deg, #103558 0%, #1a4a7a 100%); }
         
-        .gateway-card { border: 2px solid #f1f5f9; transition: all 0.2s ease; cursor: pointer; }
-        input[type="radio"]:checked + .gateway-card { border-color: #C58F28; background-color: #fefce8; }
-
         @media print {
             .no-print { display: none !important; }
             body { background: white; padding: 0; margin: 0; }
@@ -43,7 +46,6 @@
     </nav>
 
     <div class="w-full hero-gradient text-white py-16 px-6 text-center no-print relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-eraGold opacity-10 rounded-full -mr-32 -mt-32"></div>
         <div class="max-w-4xl mx-auto relative z-10">
             <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-2">Secure Fee Portal</h1>
             <p class="text-eraGold text-lg font-bold tracking-[0.2em] uppercase">Learn. Grow. Lead.</p>
@@ -57,8 +59,8 @@
                 <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.446z"/></svg>
                 </div>
-                <h2 class="text-2xl font-black text-eraBlue uppercase tracking-tighter">Payment Initiated</h2>
-                <p class="text-gray-500 text-xs mt-1 leading-relaxed text-center">Enter the Transaction ID from your UPI app and share it with us to confirm your seat.</p>
+                <h2 class="text-2xl font-black text-eraBlue uppercase tracking-tighter">Manual Confirmation</h2>
+                <p class="text-gray-500 text-xs mt-1 leading-relaxed text-center">Enter your Transaction ID and upload the screenshot to confirm your payment.</p>
             </div>
 
             <div class="border-2 border-eraBlue/10 rounded-2xl p-6 bg-slate-50/50">
@@ -90,7 +92,7 @@
 
                 <div class="mt-6 no-print">
                     <label class="block text-[10px] font-black text-eraBlue uppercase mb-2 ml-1">Upload Payment Screenshot</label>
-                    <input type="file" id="screenshot-upload" accept="image/*" class="w-full text-[10px] text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[9px] file:font-black file:uppercase file:bg-eraBlue file:text-white hover:file:bg-eraGold transition cursor-pointer border-2 border-dashed border-gray-200 rounded-xl p-3">
+                    <input type="file" id="screenshot-upload" accept="image/*" class="w-full text-[10px] text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[9px] file:font-black file:uppercase file:bg-eraBlue file:text-white hover:file:bg-eraGold transition border-2 border-dashed border-gray-200 rounded-xl p-3">
                 </div>
 
                 <div class="mt-8 pt-4 border-t border-dashed border-gray-300 text-center">
@@ -99,11 +101,11 @@
             </div>
             
             <div class="mt-8 space-y-3 no-print">
-                <button id="whatsapp-btn" onclick="shareWhatsApp()" class="w-full bg-green-500 text-white py-4 rounded-xl font-black uppercase tracking-widest hover:bg-green-600 transition-all shadow-lg flex items-center justify-center gap-2">
+                <button id="whatsapp-btn" onclick="shareWhatsApp()" class="w-full bg-green-500 text-white py-4 rounded-xl font-black uppercase tracking-widest hover:bg-green-600 transition shadow-lg flex items-center justify-center gap-2">
                     <img src="https://img.icons8.com/color/48/whatsapp.png" class="h-5 brightness-200 contrast-200">
                     Confirm on WhatsApp
                 </button>
-                <button onclick="handlePrint()" class="w-full bg-eraGold text-white py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-eraBlue transition-all shadow-md">
+                <button onclick="handlePrint()" class="w-full bg-eraGold text-white py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-eraBlue transition shadow-md">
                     Download PDF Receipt
                 </button>
             </div>
@@ -115,7 +117,7 @@
                     <h2 class="text-eraBlue font-black uppercase leading-tight">Era Education</h2>
                     <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none">Lead: Archana Gupta</p>
                 </div>
-                <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Verified</div>
+                <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Verified VPA</div>
             </div>
 
             <div class="p-8">
@@ -126,16 +128,16 @@
                     </div>
                     <div>
                         <label class="block text-[10px] font-black text-eraBlue uppercase mb-1 ml-1">Student Name & Class</label>
-                        <input type="text" id="note" placeholder="E.g. Tanmay - Class 9" oninput="updatePayment()" class="w-full px-4 py-3 rounded-xl border-2 border-gray-100 focus:border-eraGold focus:outline-none font-medium">
+                        <input type="text" id="note" placeholder="E.g. Rahul - Class 10" oninput="updatePayment()" class="w-full px-4 py-3 rounded-xl border-2 border-gray-100 focus:border-eraGold focus:outline-none font-medium">
                     </div>
                 </div>
 
                 <div class="mt-8 text-center bg-slate-50 p-6 rounded-2xl border border-dashed border-gray-200">
                     <div id="qrcode" class="flex justify-center mb-2"></div>
-                    <p id="displayNote" class="text-xs font-bold text-eraBlue mt-2"></p>
+                    <p id="displayNote" class="text-xs font-bold text-eraBlue mt-2">Scan & Pay via UPI App</p>
                     
                     <div class="mt-4 flex flex-col items-center gap-2">
-                        <p class="text-[10px] text-gray-400 font-black uppercase tracking-widest">Or Pay Manually</p>
+                        <p class="text-[10px] text-gray-400 font-black uppercase tracking-widest">Manual VPA</p>
                         <div class="flex items-center bg-white border-2 border-eraBlue/10 rounded-lg p-2 w-full max-w-[240px]">
                             <code id="vpa-text" class="flex-1 text-xs font-bold text-eraBlue px-2">archanatewatia@icici</code>
                             <button onclick="copyVPA()" class="bg-eraBlue text-white p-2 rounded-md hover:bg-eraGold transition-colors">
@@ -147,70 +149,51 @@
                 </div>
 
                 <div class="mt-8 no-print">
-                    <a id="pay-link" href="#" onclick="processPayment()" class="animate-demo block w-full bg-eraBlue text-white text-center py-4 rounded-xl font-black uppercase tracking-widest hover:bg-eraOrange transition-all shadow-lg">
-                        Initiate Payment
-                    </a>
+                    <button onclick="processPayment()" class="animate-demo block w-full bg-eraBlue text-white text-center py-4 rounded-xl font-black uppercase tracking-widest hover:bg-eraOrange transition shadow-lg">
+                        Click, If payment done
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="supervisor-dashboard" class="max-w-4xl w-full mx-6 mt-20 p-8 bg-white rounded-3xl shadow-xl border border-eraBlue/5 no-print mb-20">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-            <div>
-                <h2 class="text-2xl font-black text-eraBlue uppercase tracking-tighter">Payment Ledger</h2>
-                <p class="text-[10px] text-eraGold font-bold uppercase tracking-widest">Internal Fee Records</p>
-            </div>
-            <button onclick="exportToCSV()" class="text-[10px] bg-slate-100 hover:bg-slate-200 text-eraBlue font-black py-2 px-4 rounded-lg uppercase transition">
-                Export to Excel (CSV)
-            </button>
-        </div>
-        <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="border-b-2 border-slate-50">
-                        <th class="py-4 px-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">Date</th>
-                        <th class="py-4 px-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">Student</th>
-                        <th class="py-4 px-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">Amount</th>
-                        <th class="py-4 px-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">Transaction ID</th>
-                    </tr>
-                </thead>
-                <tbody id="ledger-body" class="text-xs">
-                    </tbody>
-            </table>
-        </div>
-    </div>
-
     <script>
         const vpa = "archanatewatia@icici";
-        const name = "Archana Gupta";
-        const adminPhone = "917065655444"; // Fixed updated contact
-        let qrcode = new QRCode(document.getElementById("qrcode"), { width: 170, height: 170, colorDark: "#103558" });
+        const merchantName = "Archana Gupta";
+        const adminPhone = "917065655444";
+        
+        let qrcode = new QRCode(document.getElementById("qrcode"), { 
+            width: 170, 
+            height: 170, 
+            colorDark: "#103558" 
+        });
 
         function updatePayment() {
             const amt = document.getElementById("amount").value;
             const note = document.getElementById("note").value;
-            document.getElementById("displayNote").innerText = note || "Awaiting Student Info...";
             
-            // Universal UPI Standard Link to avoid Risk Policy blocks
-            let upiString = `upi://pay?pa=${vpa}&pn=${encodeURIComponent(name)}&cu=INR`;
+            let upiString = `upi://pay?pa=${vpa}&pn=${encodeURIComponent(merchantName)}&cu=INR`;
             if (amt > 0) upiString += `&am=${amt}`;
             if (note.trim() !== "") upiString += `&tn=${encodeURIComponent(note)}`;
 
             qrcode.clear();
             qrcode.makeCode(upiString);
-            document.getElementById("pay-link").href = upiString;
         }
 
         function processPayment() {
             const amt = document.getElementById("amount").value;
             const note = document.getElementById("note").value;
-            if (amt <= 0) {
-                alert("Please enter a valid amount.");
+            
+            if (!amt || amt <= 0) {
+                alert("Please enter the fee amount first.");
+                return;
+            }
+            if (!note) {
+                alert("Please enter the student name.");
                 return;
             }
 
-            document.getElementById("receipt-student").innerText = note || "Not Provided";
+            document.getElementById("receipt-student").innerText = note;
             document.getElementById("receipt-amount").innerText = "₹ " + amt;
 
             document.getElementById("form-state").classList.add("hidden");
@@ -231,32 +214,6 @@
             });
         }
 
-        function saveToLedger(student, amount, txId) {
-            const records = JSON.parse(localStorage.getItem('era_payments') || '[]');
-            const newEntry = {
-                date: new Date().toLocaleDateString('en-IN'),
-                student: student,
-                amount: amount,
-                txId: txId
-            };
-            records.unshift(newEntry);
-            localStorage.setItem('era_payments', JSON.stringify(records));
-            renderLedger();
-        }
-
-        function renderLedger() {
-            const records = JSON.parse(localStorage.getItem('era_payments') || '[]');
-            const container = document.getElementById("ledger-body");
-            container.innerHTML = records.map(r => `
-                <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition">
-                    <td class="py-4 px-2 text-gray-500 font-medium">${r.date}</td>
-                    <td class="py-4 px-2 font-black text-eraBlue uppercase">${r.student}</td>
-                    <td class="py-4 px-2 font-bold text-gray-700">₹${r.amount}</td>
-                    <td class="py-4 px-2 font-mono text-eraGold">${r.txId}</td>
-                </tr>
-            `).join('');
-        }
-
         function shareWhatsApp() {
             const amt = document.getElementById("amount").value;
             const note = document.getElementById("note").value;
@@ -268,39 +225,38 @@
                 return;
             }
 
-            saveToLedger(note, amt, txId);
+            const templateParams = {
+                student_name: note,
+                amount: amt,
+                tx_id: txId,
+                date: new Date().toLocaleString('en-IN')
+            };
 
-            let message = `*Era Education Fee Confirmation*%0A---------------------------%0A*Student:* ${note}%0A*Amount:* ₹${amt}%0A*Transaction ID:* ${txId}%0A`;
-            if (fileInput.files.length > 0) message += `*Status:* Screenshot Ready to Send%0A`;
-            message += `---------------------------%0A_Sent via Secure Fee Portal_`;
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(() => console.log('Confirmation Email Sent'))
+                .catch(err => console.error('Email failed', err));
+
+            let message = `*Era Education Fee Confirmation*%0A`;
+            message += `---------------------------%0A`;
+            message += `*Student:* ${note}%0A`;
+            message += `*Amount:* ₹${amt}%0A`;
+            message += `*Transaction ID:* ${txId}%0A`;
+            if (fileInput.files.length > 0) message += `*Status:* Screenshot attached below.%0A`;
+            message += `---------------------------%0A`;
+            message += `_Manual Confirmation Requested_`;
             
             window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
         }
 
-        function exportToCSV() {
-            const records = JSON.parse(localStorage.getItem('era_payments') || '[]');
-            if (records.length === 0) { alert("No records to export."); return; }
-            
-            let csv = "Date,Student,Amount,Transaction ID\n";
-            records.forEach(r => {
-                csv += `${r.date},${r.student},${r.amount},${r.txId}\n`;
-            });
-
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.setAttribute('href', url);
-            a.setAttribute('download', `Era_Education_Payments_${new Date().toLocaleDateString()}.csv`);
-            a.click();
-        }
-
         function handlePrint() {
             const txId = document.getElementById("tx-id-input").value;
-            if (!txId) { alert("Please enter the Transaction ID first."); return; }
+            if (!txId) {
+                alert("Please enter the Transaction ID before downloading.");
+                return;
+            }
             window.print();
         }
 
-        renderLedger();
         updatePayment();
     </script>
 </body>
